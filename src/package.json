@@ -1,0 +1,14 @@
+{
+  "name": "dashboard",
+  "version": "1.0.0",
+  "description": "an iot dashboard",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "alex",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.2.33"
+  }
+}
