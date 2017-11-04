@@ -1,2 +1,2 @@
-# Node-api for internet of things
-Internet of things node api
+# Node backend api for internet of things
+Restful api Mongo / Express / Node
