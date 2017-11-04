@@ -1,2 +1,2 @@
-# Node-dashboard
-Internet of things dashboard made with node
+# Node-api for internet of things
+Internet of things node api
