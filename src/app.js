@@ -16,6 +16,9 @@ mongoose.connect('mongodb://192.168.0.112/sensors', {useMongoClient: true});
   // override mongoose promise to global node promise since is deprecated 
 mongoose.Promise = global.Promise;
 
+// use static middleware to serve files
+app.use(express.static('../../webapp/src'));
+
 // use body parser middleware to parse the body of the request as json
 app.use(bodyParser.json());
 
