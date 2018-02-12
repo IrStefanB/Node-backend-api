@@ -7,7 +7,8 @@ const routes = require('./routes/api');
 const bodyParser = require('body-parser');
   //  import mongoose to connect to mongodb
 const mongoose = require('mongoose');
-
+//  import mqtt connection setup
+const mqtt = require('./mqtt/connection');
 //  setup express
 const app = express();
 
