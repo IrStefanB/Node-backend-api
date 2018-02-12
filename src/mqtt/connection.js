@@ -1,6 +1,5 @@
 const mqtt = require('mqtt')
 const client  = mqtt.connect('mqtt://192.168.0.110:6026');
-console.log(client);
 client.on('connect', function () {
     client.subscribe('/status/light')
     client.publish('presence', 'Hello mqtt');
