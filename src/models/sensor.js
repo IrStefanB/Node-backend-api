@@ -22,7 +22,7 @@ const SensorSchema = new Schema({
     
 });
     // Model
-const Sensor = mongoose.model('Sensor', SensorSchema); //The string is the name of the collection in the db
+const Sensor = mongoose.model('Sensor', SensorSchema); //The string is the name of the collection in the db, second param is the schema used
 
 // export module
 module.exports = Sensor; 

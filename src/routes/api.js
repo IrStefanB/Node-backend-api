@@ -7,7 +7,7 @@ const router = express.Router();
 //  import sensor model
 const Sensor = require('../models/sensor')
 
-// test GET route 
+// GET route 
 router.get('/main', (req, res) => {
     res.send({type : 'GET'});
 })
