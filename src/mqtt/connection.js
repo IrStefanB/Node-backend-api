@@ -1,8 +1,10 @@
+const mqtt = require('mqtt');
+const client  = mqtt.connect('mqtt://192.168.0.110:6026');
 class Connection {
     constructor (){
-        let self = this;
-        self.mqtt = require('mqtt');
-        self.client  = this.mqtt.connect('mqtt://192.168.0.110:6026');
+        const self = this;
+        self.mqtt = mqtt;
+        self.client = client;
 
         self.client.on('connect', function () {
             self.client.subscribe('/status/light')
