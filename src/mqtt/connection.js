@@ -3,7 +3,6 @@ const client  = mqtt.connect('mqtt://192.168.0.110:6026');
 class Connection {
     constructor (){
         const self = this;
-        self.mqtt = mqtt;
         self.client = client;
 
         self.client.on('connect', function () {
