@@ -1,15 +1,23 @@
-const mqtt = require('mqtt')
-const client  = mqtt.connect('mqtt://192.168.0.110:6026');
-client.on('connect', function () {
-    client.subscribe('/status/light')
-    client.publish('presence', 'Hello mqtt');
-})
+class Connection {
+    constructor (){
+        let self = this;
+        self.mqtt = require('mqtt');
+        self.client  = this.mqtt.connect('mqtt://192.168.0.110:6026');
 
-client.on('message', function (topic, message) {
-    // message is Buffer
-    client.end()
-})
+        self.client.on('connect', function () {
+            self.client.subscribe('/status/light')
+            self.client.publish('presence', 'Hello mqtt');
+            console.log('mqtt connection established...');
+    })
 
-module.exports = mqtt;
+        self.endConnection = () => {
+            self.client.end()
+        }
+    }
+}
+
+//const qttConnection = new Connection();
+
+module.exports = Connection;
 
 
