@@ -8,13 +8,17 @@ const router = express.Router();
 const Sensor = require('../models/sensor')
 
 // GET route 
-router.get('/main', (req, res) => {
-    res.send({type : 'GET'});
+router.get('/sensors/name/:name', (req, res) => {
+   Sensor.findOne(req.params).then( (err, sensor) => {
+        if (err) return res.status(500).send(err);
+        sensor ? res.send( sensor ) : res.send( "query not found" );          
+  });
 })
 
 // POST route 
-router.post('/main', (req, res, next) => {
+router.post('/sensors', (req, res, next) => {
     // creates a new sensor entry based on the request and saves it to the db and returns a promise
+    console.log(req.body);
     Sensor.create(req.body)
     .then( (data) => {
         res.send(data);
@@ -23,7 +27,7 @@ router.post('/main', (req, res, next) => {
 });
 
 // PUT route 
-router.put('/main/:id', (req, res, next) => {
+router.put('/sensors/:id', (req, res, next) => {
     Sensor.findByIdAndUpdate({_id : req.params.id}, req.body)
     .then( () => {
         Sensor.findOne({_id : req.params.id})
@@ -35,7 +39,7 @@ router.put('/main/:id', (req, res, next) => {
 })
 
 // DELETE route 
-router.delete('/main/:id', (req, res, next) => {
+router.delete('/sensors/:id', (req, res, next) => {
     Sensor.findByIdAndRemove({_id : req.params.id})
     .then( (data) => {
         res.send(data);
