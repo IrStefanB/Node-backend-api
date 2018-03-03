@@ -7,6 +7,8 @@ const routes = require('./routes/api');
 const bodyParser = require('body-parser');
 //  import mqtt connection setup
 const mqtt = require('./mqtt/connection');
+//  import logic for managing mq messaging
+const mqMessaging = require('./mqtt/messaging');
 //  setup express
 const app = express();
 // mongo db connection
