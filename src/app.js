@@ -18,6 +18,7 @@ const socketIo = require('socket.io');
 // socket events
 const socketEvents = require('./socket/events');
 
+const connectToSock = require('./socket/connection');
 // use body parser middleware to parse the body of the request as json
 app.use(bodyParser.json());
 
@@ -37,10 +38,5 @@ const server = app.listen(process.env.port || 3000, () => {
   console.log('listening for requests...');
 })
 
-// start socket listening
-const socketConnection = socketIo(server);
+connectToSock(server);
 
-// pass the connected socket to an event handler
-socketConnection.on('connection', (socket) => {
-  socketEvents(socket);
-})
