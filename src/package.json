@@ -14,7 +14,8 @@
     "mongodb": "^2.2.33",
     "mongoose": "^4.12.6",
     "mqtt": "^2.15.2",
+    "nodemon": "^1.18.3",
     "package.json": "^2.0.1",
-    "socket.io": "^2.0.4"
+    "ws": "^6.0.0"
   }
 }

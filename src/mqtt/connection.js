@@ -10,7 +10,11 @@ class Connection {
             self.client.subscribe(self.topic);
             self.client.publish('presence', 'Hello mqtt');
             console.log('mqtt connection established...');
-    })
+        })
+
+        self.client.stream.on('error', function(err) {
+            console.log(err.code);
+        })
 
         self.endConnection = () => {
             self.client.end()

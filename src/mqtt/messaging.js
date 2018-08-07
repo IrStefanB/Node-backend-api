@@ -6,7 +6,10 @@ class Subscription {
     constructor () {
         mqtt.client.on('message', function (topic, message) {
             console.log('topic: ' + topic + ' message: ' + message);
-            socketEvents.mqEvent( 'topic: ' + topic + ' message: ' + message );
+            socketEvents.mqEvent( {
+                'topic' : 'topic is: ' + topic,
+                'message' : 'lights are: ' + message
+            });
         }) 
     }
 }
