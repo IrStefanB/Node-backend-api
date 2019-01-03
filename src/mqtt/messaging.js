@@ -8,7 +8,7 @@ class Subscription {
             console.log('topic: ' + topic + ' message: ' + message);
             socketEvents.mqEvent( {
                 'topic' : 'topic is: ' + topic,
-                'message' : 'lights are: ' + message
+                'message' : 'light is: ' + message
             });
         }) 
     }

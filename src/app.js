@@ -14,7 +14,8 @@ const app = express();
 // mongo db connection
 const mongoDbConnection = require('./mongodb/connection');
 //socket io
-const socketIo = require('socket.io');
+//const socketIo = require('socket.io');
+//const ws = require(ws)
 // socket events
 const socketEvents = require('./socket/events');
 
@@ -26,7 +27,11 @@ app.use(bodyParser.json());
 app.use('/api', routes);
 
 // use static middleware to serve files
-app.use(express.static('../../webapp/src'));
+
+////// Old route to static
+//app.use(express.static('../../webapp/src'));
+//////
+//app.use(express.static('../../webapp/src'));
 
 // error handling middleware
 app.use( (err, req, res, next) => {
@@ -38,5 +43,5 @@ const server = app.listen(process.env.port || 3000, () => {
   console.log('listening for requests...');
 })
 
-connectToSock(server);
+//connectToSock(server);
 

@@ -9,13 +9,13 @@
   "author": "alex",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
-    "mongodb": "^2.2.33",
-    "mongoose": "^4.12.6",
-    "mqtt": "^2.15.2",
-    "nodemon": "^1.18.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongodb": "^2.2.36",
+    "mongoose": "^4.13.17",
+    "mqtt": "^2.18.8",
+    "nodemon": "^1.18.9",
     "package.json": "^2.0.1",
-    "ws": "^6.0.0"
+    "ws": "^6.1.2"
   }
 }
