@@ -11,7 +11,7 @@ const connection = () => {
     mongoose.connection.once('open', () => {
         console.log('mongoDb connection established...')
     }).on('error', (error) => {
-        console.log(error);
+        console.log(`MongoDB error: ${error}`);
     });
 }
 

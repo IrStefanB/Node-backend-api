@@ -13,7 +13,7 @@ class Connection {
         })
 
         self.client.stream.on('error', function(err) {
-            console.log(err.code);
+            console.log(`MQTT error:  ${err.code}`);
         })
 
         self.endConnection = () => {
