@@ -21,14 +21,19 @@ let openedSocket;
 
 const mqEvent = function(message) {
     //openedSocket ? socketOutboundEvent(openedSocket, message) : 'Socket not opened yet';
-    openedSocket ? openedSocket.send(JSON.stringify(message)) : console.log('Socket not opend yet!');
+    openedSocket ? openedSocket.send(JSON.stringify(message)) : console.log('Socket not opened yet!');
 }
 
 wss.on('connection', function connection(ws) {
+    console.log('websocket connected')
     openedSocket = ws;
     ws.on('message', function incoming(message) {
       console.log('received: %s', message);
     });
+    // ws.send({
+    //   "firstName": "John",
+    //   "lastName": "Smith"});
+
   });
 
 //module.exports.setSocket = setSocket;

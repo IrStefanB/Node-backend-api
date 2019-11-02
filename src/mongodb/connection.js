@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const connection = () => {
     // connect to mongodb
-    mongoose.connect('mongodb://localhost/sensors', {useMongoClient: true});
+    mongoose.connect('mongodb://localhost/sensors', {useNewUrlParser: true, useUnifiedTopology: true});
     // override mongoose promise to global node promise since is deprecated 
     mongoose.Promise = global.Promise;
 

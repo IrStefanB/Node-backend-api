@@ -39,7 +39,7 @@ app.use( (err, req, res, next) => {
 })
 
 //  listen for requests
-const server = app.listen(process.env.port || 3000, () => {
+const server = app.listen(process.env.port || 3010, () => {
   console.log('listening for requests...');
 })
 
